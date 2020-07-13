@@ -18,3 +18,7 @@ $app->get('/', function () use ($app) {
 $app->get('/hello/world', function () use ($app) {
     return "Hello world!";
 });
+
+$app->get('/hello/{name}', function ($name) use ($app) {
+    return "Hello {$name}";
+});
