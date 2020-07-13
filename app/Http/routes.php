@@ -19,6 +19,6 @@ $app->get('/hello/world', function () use ($app) {
     return "Hello world!";
 });
 
-$app->get('/hello/{name}', function ($name) use ($app) {
+$app->get('/hello/{name}', ['middleware' => 'hello', function ($name) {
     return "Hello {$name}";
-});
+}]);
