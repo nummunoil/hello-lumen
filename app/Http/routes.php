@@ -32,6 +32,6 @@ $app->get('/response', function (Illuminate\Http\Request $request) {
     if ($request->wantsJson()) {
         return response()->json(['greeting' => 'Hello stranger']);
     }
-    return (new Illuminate\Http\Response('Hello stranger', 200))
-        ->header('Content-Type', 'text/plain');
+
+    return response()->make('Hello stranger', 200, ['Content-Type' => 'text/plain']);
 });
