@@ -22,3 +22,7 @@ $app->get('/hello/world', function () use ($app) {
 $app->get('/hello/{name}', ['middleware' => 'hello', function ($name) {
     return "Hello {$name}";
 }]);
+
+$app->get('/request', function (Illuminate\Http\Request $request) {
+    return "Hello " . $request->get('name', 'stranger');
+});
